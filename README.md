@@ -37,8 +37,14 @@ To specify simulation parameters, we use the same configuration JSON files as in
 
 #### Configuration Options 
 The configuration options which are not listed below were a part of the original [flsim](https://github.com/iQua/flsim). Refer to the original [flsim wiki](https://github.com/iQua/flsim/wiki/Configuration) for details on how to set these parameters. 
-
-
-
-
-
+In the nested model section `model`: 
+* `size`: Specifies the model size in kB. The model size will be used in the network code. 
+In the nested section `network`, 
+* `folder`: Specifies folder in the scratch file which should be run for the network. The default parameter, which works with the rest of our network settings, is `wifi_exp`. 
+* `type`: Specifies the type of network to run the simulation on. Currently supported options are `ethernet` and `wifi`. The network code is in the scratch folder of the ns3-fl-network submodule. 
+* `wifi`: A nested section, within the `network` section, that specifies configurations for the WiFi network. 
+    * `loss`: Specifies the mean of the range of propogation loss in the network. We use the RandomPropogationLossModel in the network code to simulate loss. The range for the loss is 20 below and above the specified mean. 
+    * `max_packet_size`: Specifies the maximum size for a packet to be sent over the network. 
+* `ethernet`: A nested section, within the `network` section, that specifies configurations for the Ethernet network. 
+    * `max_packet_size`: Specifies the maximum size for a packet to be sent over the network. 
+* `device_type`: Specifies the device type for the clients in the network simulation. The device type is used when calculating the average power and energy consumed during each round of the simulation. Currently, the supported options are `400` and `4` for Raspberry Pi 400s and 4s, respectively.
