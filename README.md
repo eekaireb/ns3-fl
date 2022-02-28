@@ -35,6 +35,8 @@ To start a simulation, from the root directory, run
     
 To specify simulation parameters, we use the same configuration JSON files as in [flsim](https://github.com/iQua/flsim), though we add more fields to allow for a wider range of data and algorithm settings, in addition to network settings. 
 
+There are examples of how to set up the configuration file in flsim/configs/ns3-fl.
+
 #### Configuration Options 
 The configuration options which are not listed below were a part of the original [flsim](https://github.com/iQua/flsim). Refer to the original [flsim wiki](https://github.com/iQua/flsim/wiki/Configuration) for details on how to set these parameters. 
 In the nested model section `model`: 
