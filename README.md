@@ -50,3 +50,10 @@ In the nested section `network`,
 * `ethernet`: A nested section, within the `network` section, that specifies configurations for the Ethernet network. 
     * `max_packet_size`: Specifies the maximum size for a packet to be sent over the network. 
 * `device_type`: Specifies the device type for the clients in the network simulation. The device type is used when calculating the average power and energy consumed during each round of the simulation. Currently, the supported options are `400` and `4` for Raspberry Pi 400s and 4s, respectively.
+
+#### Troubleshooting
+In the event that the submodules are not linked correctly, here are the links to the submodules: 
+* [ns3-fl flsim repository](https://github.com/eekaireb/flsim).
+* [ns3-fl-network repository](https://github.com/eekaireb/ns3-fl-network).
+
+These repos can be seperated cloned into the ns3-fl folder. The configuration process will be the same as above. 
